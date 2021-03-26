@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { useDispatch } from "react-redux";
-import {deleteCommentAction} from '../actions/index'
+import { deleteCommentAction } from "../redux/actions";
 export default function UlOfComments(props) {
   const dispatch = useDispatch();
   const { comments } = props;
   const willDelete = (e) => {
     const id = parseInt(e.target.getAttribute("data-id"));
-    dispatch(deleteCommentAction(id))
+    dispatch(deleteCommentAction(id));
   };
   return (
     <ul>
